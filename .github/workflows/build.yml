@@ -26,5 +26,8 @@ jobs:
         push: true
         tags: ${{ env.LATEST_TAG }}
 
+    - name: run tests
+      uses: liatrio/github-actions/apprentice-action@master
+
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
