@@ -2,7 +2,7 @@ name: Build
 on: [push]
 env:
   TEST_TAG: cmumford/node-starter:test
-  LATEST_TAG: cmumford/node-starter:latest
+  PUSH_TAG: cmumford/node-starter:latest
 jobs:
   build:
     name: Build
@@ -20,18 +20,24 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
-    - name: Build
+    - name: Build for testing
       uses: docker/build-push-action@v6
       with:
-        push: true
-        tags: ${{ env.LATEST_TAG }}
+        push: false
+        tags: ${{ env.TEST_TAG }}
 
-    - name: Run ${{ env.LATEST_TAG }} for testing
+    - name: Run ${{ env.TEST_TAG }} for testing
       run: |
-        docker run -p 80:80 --rm --detach ${{ env.LATEST_TAG }}
+        docker run -p 80:80 --rm --detach ${{ env.TEST_TAG }}
 
     - name: run tests
       uses: liatrio/github-actions/apprentice-action@master
+
+    - name: Build for pushing
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: ${{ env.PUSH_TAG }}
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
