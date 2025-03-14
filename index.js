@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
     const now = new Date();
     const response = {
         "message": "My name is timestamper",
-        "timestamp": now.valueOf() + 7 * 1000
+        "timestamp": now.valueOf() + 3 * 1000
     };
     res.send(response);
 });
