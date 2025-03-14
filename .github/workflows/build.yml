@@ -26,6 +26,10 @@ jobs:
         push: true
         tags: ${{ env.LATEST_TAG }}
 
+    - name: Run ${{ env.LATEST_TAG }} for testing
+      run: |
+        docker run -p 80:80 --rm ${{ env.LATEST_TAG }}
+
     - name: run tests
       uses: liatrio/github-actions/apprentice-action@master
 
