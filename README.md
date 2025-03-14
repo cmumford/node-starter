@@ -1,23 +1,25 @@
-# Building a Docker Image
+# NodeJS Docker Starter Project
+
+## Building a Docker Image
 
 ```sh
 docker build --no-cache -t node-starter:latest .
 ```
 
 
-# Running a Docker Image
+## Running a Docker Image
 
 ```sh
 docker run -p 80:80 node-starter:latest
 ```
 
-# With Docker-Compose
+## With Docker-Compose
 
 ```sh
 docker-compose up --build --watch
 ```
 
-# Docker Stuff
+## Docker Stuff
 
 ```sh
 docker rm -f $(docker ps -a -q)
