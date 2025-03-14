@@ -28,7 +28,7 @@ jobs:
 
     - name: Run ${{ env.LATEST_TAG }} for testing
       run: |
-        docker run -p 80:80 --rm ${{ env.LATEST_TAG }}
+        docker run -p 80:80 --rm --detach ${{ env.LATEST_TAG }}
 
     - name: run tests
       uses: liatrio/github-actions/apprentice-action@master
