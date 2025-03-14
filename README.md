@@ -24,3 +24,15 @@ docker-compose up --build --watch
 ```sh
 docker rm -f $(docker ps -a -q)
 ```
+
+Tagging local image
+
+```sh
+docker tag node-starter:latest cmumford/node-starter:latest
+```
+
+Pushing to a registry (dockerhub)
+
+```sh
+docker push cmumford/node-starter:latest
+```
