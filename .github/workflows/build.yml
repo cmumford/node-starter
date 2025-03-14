@@ -23,7 +23,7 @@ jobs:
     - name: Build
       uses: docker/build-push-action@v6
       with:
-        push: false
+        push: true
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
