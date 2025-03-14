@@ -3,7 +3,7 @@
 ## Building a Docker Image
 
 ```sh
-docker build --no-cache -t node-starter:latest .
+docker build -t node-starter:latest .
 ```
 
 
