@@ -23,7 +23,7 @@ jobs:
 
       - name: Build ${{ env.LATEST_TAG }} for testing
         run: |
-          docker build -t node-starter:latest .
+          docker build --no-cache -t node-starter:latest .
 
       - name: Run ${{ env.LATEST_TAG }} for testing
         run: |
