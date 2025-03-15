@@ -9,6 +9,7 @@ on:
       - main
 env:
   LATEST_TAG: ${{ vars.DOCKERHUB_USERNAME }}/node-starter:latest
+  TEST_TAG: node-starter:test
 
 jobs:
   build-and-test:
@@ -21,13 +22,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build ${{ env.LATEST_TAG }} for testing
+      - name: Build ${{ env.TEST_TAG }} for testing
         run: |
-          docker build -t node-starter:latest .
+          docker build -t ${{ env.TEST_TAG }} .
 
-      - name: Run ${{ env.LATEST_TAG }} for testing
+      - name: Run ${{ env.TEST_TAG }} for testing
         run: |
-          docker run -p 80:80 --rm --detach ${{ env.LATEST_TAG }}
+          docker run -p 80:80 --rm --detach ${{ env.TEST_TAG }}
 
       - name: run tests
         uses: liatrio/github-actions/apprentice-action@v1.0.0
