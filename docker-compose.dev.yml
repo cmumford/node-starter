@@ -5,7 +5,7 @@ services:
     image: node-starter
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./Dockerfile-dev
     volumes:
       - .:/usr/src/node-starter
       - /usr/src/node-starter/node_modules

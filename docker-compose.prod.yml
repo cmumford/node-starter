@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  node-starter:
+    image: node-starter
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/usr/src/node-starter
+      - /usr/src/node-starter/node_modules
+    command: npm run start
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 80:80
