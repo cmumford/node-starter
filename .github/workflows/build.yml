@@ -58,6 +58,5 @@ jobs:
         with:
           push: true
           tags: ${{ env.PUSH_TAG }}
-          platforms: linux/amd64
           build-args: |
             GIT_SHA1=${{ github.sha }}
