@@ -12,5 +12,6 @@ services:
     command: npm run dev
     environment:
       - NODE_ENV=development
+      - GIT_COMMIT_ID=dev
     ports:
       - 80:80

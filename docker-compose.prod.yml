@@ -12,5 +12,6 @@ services:
     command: npm run start
     environment:
       - NODE_ENV=production
+      - GIT_COMMIT_ID=prod
     ports:
       - 80:80
