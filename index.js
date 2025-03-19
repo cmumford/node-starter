@@ -3,10 +3,10 @@ const app = express();
 const PORT = 80;
 
 app.get('/', (req, res) => {
-    const now = new Date();
     res.send({
         "message": "My name is timestamper",
-        "timestamp": now.valueOf()
+        "timestamp": Date.now(),
+        "env": process.env.GIT_COMMIT_ID
     });
 });
 
