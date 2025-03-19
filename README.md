@@ -20,7 +20,7 @@ make prod
 ### Building a Docker Image
 
 ```sh
-docker build -t node-starter:latest .
+docker build -t node-starter:latest --build-arg GIT_SHA1=build .
 ```
 
 ### Running a Docker Image
@@ -37,18 +37,22 @@ docker-compose up --build --watch
 
 ## Misc. Docker Stuff
 
+Delete all containers
 ```sh
 docker rm -f $(docker ps -a -q)
 ```
 
-Tagging local image
+Delete all images
+```sh
+docker rmi -f $(docker images -aq)
+```
 
+Tagging local image
 ```sh
 docker tag node-starter:latest cmumford/node-starter:latest
 ```
 
 Pushing to a registry (dockerhub)
-
 ```sh
 docker push cmumford/node-starter:latest
 ```

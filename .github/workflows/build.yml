@@ -24,7 +24,7 @@ jobs:
 
       - name: Build ${{ env.TEST_TAG }} for testing
         run: |
-          docker build -t ${{ env.TEST_TAG }} .
+          docker build -t ${{ env.TEST_TAG }} --build-arg GIT_SHA1=${{ github.sha }} .
 
       - name: Run ${{ env.TEST_TAG }} for testing
         run: |
@@ -59,3 +59,5 @@ jobs:
           push: true
           tags: ${{ env.PUSH_TAG }}
           platforms: linux/amd64
+          build-args: |
+            GIT_SHA1=${{ github.sha }}
