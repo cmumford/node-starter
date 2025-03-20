@@ -35,6 +35,11 @@ docker run -p 80:80 node-starter:latest
 docker-compose up --build --watch
 ```
 
+## Tests
+```sh
+npm test
+```
+
 ## Misc. Docker Stuff
 
 Delete all containers
