@@ -19,6 +19,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run project tests
+        run: npm test
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -30,7 +36,7 @@ jobs:
         run: |
           docker run -p 80:80 --rm --detach ${{ env.TEST_TAG }}
 
-      - name: run tests
+      - name: run external tests
         uses: liatrio/github-actions/apprentice-action@v1.0.0
 
   push:
