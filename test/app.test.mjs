@@ -1,6 +1,7 @@
-const axios = require("axios");
-const { expect } = require('chai');
-const server = require('../app/app');
+import axios from 'axios';
+import { expect } from 'chai';
+import app from '../app/app.cjs';
+const server = app;
 
 const dockerBridgeIP = "127.0.0.1";
 

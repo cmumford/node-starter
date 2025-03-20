@@ -2,12 +2,13 @@
   "name": "node-starter",
   "version": "1.0.0",
   "description": "A Node.js app running in Docker",
-  "main": "app/app.js",
+  "main": "app/app.cjs",
   "scripts": {
-    "start": "node app/app.js",
-    "dev": "nodemon app/app.js",
+    "start": "node app/app.cjs",
+    "dev": "nodemon app/app.cjs",
     "test": "mocha"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cmumford/node-starter"
@@ -24,8 +25,8 @@
   "devDependencies": {
     "axios": "^1.8.4",
     "chai": "^5.2.0",
-    "chai-http": "^4.4.0",
-    "mocha": "^11.1.0",
-    "nodemon": "^3.0.1"
+    "chai-http": "^5.1.0",
+    "mocha": "^11.2.0",
+    "nodemon": "^3.1.9"
   }
 }
