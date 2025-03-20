@@ -56,3 +56,8 @@ Pushing to a registry (dockerhub)
 ```sh
 docker push cmumford/node-starter:latest
 ```
+
+Pulling on macOS
+```sh
+docker pull --platform=linux/arm64 cmumford/node-starter:latest
+```
