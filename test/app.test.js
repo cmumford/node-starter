@@ -1,5 +1,5 @@
 const axios = require("axios");
-const expect = require("chai").expect;
+const { expect } = require('chai');
 const server = require('../app/app');
 
 const dockerBridgeIP = "127.0.0.1";
