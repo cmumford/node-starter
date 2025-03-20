@@ -2,6 +2,7 @@ FROM node:lts-alpine
 ARG GIT_SHA1=dev
 ENV NODE_ENV=development
 ENV GIT_COMMIT_ID=$GIT_SHA1
+ENV PORT=80
 WORKDIR /usr/src/node-starter
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --development --silent && mv node_modules ../

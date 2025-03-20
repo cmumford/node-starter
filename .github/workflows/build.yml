@@ -10,6 +10,7 @@ on:
 env:
   PUSH_TAG: ${{ vars.DOCKERHUB_USERNAME }}/node-starter:latest
   TEST_TAG: node-starter:test
+  TEST_PORT: 3000
 
 jobs:
   build-and-test:
