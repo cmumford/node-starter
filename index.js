@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
     res.send({
         "message": "My name is timestamper",
         "timestamp": Date.now(),
-        "env": process.env.GIT_COMMIT_ID
+        "git-commit-id": process.env.GIT_COMMIT_ID
     });
 });
 
